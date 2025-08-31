@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.mypgphone.com
+
+# Sitemaps
+Sitemap: https://www.mypgphone.com/sitemap.xml

@@ -1,0 +1,52 @@
+#Product {
+    background: url("/img/call-to-action.jpg") ;
+    background-size: 100% ;
+    background-attachment: fixed ;
+    
+    color: #fffafa;
+    
+    }
+    h2 {
+      color: #fdfdfd;
+    }
+
+    header {
+      background: url("/img/bg.jpg");
+      height: 900px;
+      width: 100%;
+      background-size: 100% ;
+      background-attachment:fixed ;
+      overflow: scroll;
+      text-align: center;
+    }
+
+  .item {
+      max-width: 480px; 
+    margin: 0 auto;
+     
+
+    }
+
+    .item img {
+      width: 100%;
+    }
+
+    .Clickitem {
+      max-width: 480px; 
+      display: block;
+      margin: 0 auto;
+    }
+
+    .Contact {
+      align-items: center;
+      
+    }
+    .Contact ul{
+   display: inline-flex;
+   border: 1px solid;
+   max-width: 400px; 
+
+    }
+    .Contact ul li{
+      margin-left: 20px;
+    }
