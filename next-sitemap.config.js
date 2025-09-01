@@ -1,5 +1,5 @@
 module.exports = {
-    siteUrl: 'https://www.mypgphone.com',
+    siteUrl: 'https://www.pgphonepro.shop	',
     generateRobotsTxt: true, // (optional)
     // อื่นๆ การตั้งค่าของคุณ
     transform: async (config, path) => {
