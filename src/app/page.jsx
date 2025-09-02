@@ -5,6 +5,7 @@ import Item from "./components/Item";
 import Header from "./components/Header";
 import Videos from "./components/Videos";
 
+// ✅ Metadata (Next.js 13+ ใช้ได้)
 export const metadata = {
   title:
     "PG-Phone | สมาร์ทโฟน Android สเปคแรง ราคาสุดคุ้ม แบตอึด เล่นเกมไม่มีสะดุด",
@@ -26,11 +27,11 @@ export const metadata = {
       "PG-Phone | สมาร์ทโฟน Android สเปคแรง ราคาสุดคุ้ม แบตอึด เล่นเกมไม่มีสะดุด",
     description:
       "PG Phone | มือถือราคาคุ้มค่า โปรโมชั่นแรง ส่งตรงถึงหน้าบ้าน ซื้อขายมือถือออนไลน์ ราคาดี ของแท้ 100% จัดส่งเร็ว สั่งซื้อง่าย",
-    url: "https://www.pgphonepro.shop",
+    url: "https://www.pgprophone.shop",
     siteName: "PG Phone Pro",
     images: [
       {
-        url: "https://www.pgphonepro.shop/images/reviwe.jpg",
+        url: "https://www.pgprophone.shop/images/review.jpg",
         width: 1200,
         height: 630,
         alt: "PG Phone - สมาร์ทโฟน Android ราคาสุดคุ้ม",
@@ -45,87 +46,96 @@ export const metadata = {
       "PG-Phone | สมาร์ทโฟน Android สเปคแรง ราคาสุดคุ้ม แบตอึด เล่นเกมไม่มีสะดุด",
     description:
       "PG Phone | มือถือราคาคุ้มค่า โปรโมชั่นแรง ส่งตรงถึงหน้าบ้าน ซื้อขายมือถือออนไลน์ ราคาดี ของแท้ 100% จัดส่งเร็ว สั่งซื้อง่าย",
-    images: ["https://www.pgphonepro.shop/images/reviwe.jpg"],
+    images: ["https://www.pgprophone.shop/images/review.jpg"],
   },
 };
 
-// ✅ Structured Data หลายรูปแบบ
+// ✅ Structured Data (แยก script แต่ละอัน)
 function StructuredData() {
-  const schema = [
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    name: "PG-Phone",
+    image: [
+      "https://www.pgprophone.shop/images/review.jpg",
+      "https://www.pgprophone.shop/images/review2.jpg",
+    ],
+    description:
+      "PG Phone | มือถือราคาคุ้มค่า โปรโมชั่นแรง ส่งตรงถึงหน้าบ้าน ซื้อขายมือถือออนไลน์ ราคาดี ของแท้ 100% จัดส่งเร็ว สั่งซื้อง่าย",
+    brand: {
+      "@type": "Brand",
       name: "PG-Phone",
-      image: [
-        "https://www.pgphonepro.shop/images/reviwe.jpg",
-        "https://www.pgphonepro.shop/images/reviwe2.jpg",
-      ],
-      description:
-        "PG Phone | มือถือราคาคุ้มค่า โปรโมชั่นแรง ส่งตรงถึงหน้าบ้าน ซื้อขายมือถือออนไลน์ ราคาดี ของแท้ 100% จัดส่งเร็ว สั่งซื้อง่าย",
-      brand: {
-        "@type": "Brand",
+    },
+    offers: {
+      "@type": "Offer",
+      url: "https://www.pgprophone.shop/",
+      priceCurrency: "THB",
+      price: "9900",
+      priceValidUntil: "2025-12-31",
+      itemCondition: "https://schema.org/NewCondition",
+      availability: "https://schema.org/InStock",
+      seller: {
+        "@type": "Organization",
         name: "PG-Phone",
-      },
-      offers: {
-        "@type": "Offer",
-        url: "https://www.pgphonepro.shop/",
-        priceCurrency: "THB",
-        price: "9900",
-        priceValidUntil: "2025-12-31",
-        itemCondition: "https://schema.org/NewCondition",
-        availability: "https://schema.org/InStock",
-        seller: {
-          "@type": "Organization",
-          name: "PG-Phone",
-          url: "https://www.pgphonepro.shop",
-          logo: "https://www.pgphonepro.shop/img/logo.png",
-        },
+        url: "https://www.pgprophone.shop",
+        logo: "https://www.pgprophone.shop/img/logo.png",
       },
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "PG Phone Pro",
-      url: "https://www.pgphonepro.shop",
-      potentialAction: {
-        "@type": "SearchAction",
-        target:
-          "https://www.pgphonepro.shop/search?q={search_term_string}",
-        "query-input": "required name=search_term_string",
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "PG Phone Pro",
+    url: "https://www.pgprophone.shop",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.pgprophone.shop/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "หน้าแรก",
+        item: "https://www.pgprophone.shop",
       },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "หน้าแรก",
-          item: "https://www.pgphonepro.shop",
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "สินค้า",
-          item: "https://www.pgphonepro.shop/products",
-        },
-      ],
-    },
-  ];
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "สินค้า",
+        item: "https://www.pgprophone.shop/products",
+      },
+    ],
+  };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+    </>
   );
 }
 
 export default function Page() {
   return (
     <>
-      {/* ✅ ใส่ Structured Data */}
+      {/* ✅ Structured Data */}
       <StructuredData />
 
       {/* ✅ Meta tags เพิ่มเติม */}
@@ -133,17 +143,28 @@ export default function Page() {
         name="google-site-verification"
         content="ryOmDGaWXKrwl4E9xiLHh2maGVlmpjzyFN8m9QfAyyM"
       />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link
         rel="shortcut icon"
-        href="https://www.pgphonepro.shop/favicon.ico"
+        href="https://www.pgprophone.shop/favicon.ico"
         type="image/x-icon"
       />
-      <link rel="canonical" href="https://www.pgphonepro.shop" />
+      <link rel="canonical" href="https://www.pgprophone.shop" />
 
-      {/* ✅ Layout หน้าเว็บ */}
+      {/* ✅ Layout */}
       <Header />
       <main className="container mx-auto px-4 py-6">
+        <div className="text-center">
+          <h3>PG-Phone มือถือราคาคุ้มค่า</h3>
+          <div className="review">
+            <img
+              src="https://www.pgprophone.shop/images/review.jpg"
+              alt="PG-Phone มือถือราคาคุ้มค่า"
+              className="review-img"
+              width="100%"
+            />
+          </div>
+        </div>
+        <hr />
         <Videos />
         <Sliders />
         <Pages />

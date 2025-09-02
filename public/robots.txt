@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.pgphonepro.shop	
+Host: https://www.pgprophone.shop	
 
 # Sitemaps
-Sitemap: https://www.pgphonepro.shop	/sitemap.xml
+Sitemap: https://www.pgprophone.shop	/sitemap.xml
